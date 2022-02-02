@@ -4,7 +4,7 @@ import Details from '../../components/Details/Details';
 import { fetchPinballMachinesById } from '../../services/pinball';
 
 const Detail = () => {
-  const [machine, setMachine] = useState();
+  const [machine, setMachine] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 

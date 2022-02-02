@@ -1,19 +1,26 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Details = ({ images, date, title, type, units, design, manufacturer }) => {
+const Details = ({ images, date, title, type, design, manufacturer }) => {
   const history = useHistory();
 
   function handleBackHome() {
     history.push('/');
   }
   return (
-    <div>
-      {images.map((i) => (
-        <img key={i.href} src={i.href} />
-      ))}
+    <>
+      <h1>{title}</h1>
+      <p>{date}</p>
+      <p>{type}</p>
+      <p>{design}</p>
+      <p>{manufacturer}</p>
+      <div className="image-container">
+        {images.map((i) => (
+          <img className="img" key={i.href} src={i.href} />
+        ))}
+      </div>
       <button onClick={handleBackHome}>Go back to home</button>
-    </div>
+    </>
   );
 };
 

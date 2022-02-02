@@ -9,6 +9,7 @@ const Home = () => {
     const fetchData = async () => {
       const data = await fetchPinballMachines();
       setMachines(data);
+      console.log('data', data);
     };
     fetchData();
   }, []);
