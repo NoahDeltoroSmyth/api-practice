@@ -8,7 +8,6 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPinballMachines();
-      console.log(data);
       setMachines(data);
     };
     fetchData();

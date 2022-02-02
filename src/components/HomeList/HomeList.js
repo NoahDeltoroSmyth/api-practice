@@ -5,7 +5,7 @@ const HomeList = ({ machines }) => {
   return (
     <>
       {machines.map((m) => (
-        <Link key={m.ipdb}>
+        <Link key={m.ipdb} to={`/detail/${m.ipdb}`}>
           <h1>{m.title}</h1>
         </Link>
       ))}
