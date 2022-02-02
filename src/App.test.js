@@ -1,8 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, waitForElementToBeRemoved, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import Home from './views/Home/Home';
+// import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('app renders a list of pinball names', async () => {
+  render(
+    <MemoryRouter>
+      <Home />
+    </MemoryRouter>
+  );
+
+  await waitFor(
+    async () => {
+      const linkElement = await screen.findByRole('heading', { name: /a-b-c bowler/i });
+      expect(linkElement).toBeInTheDocument();
+    },
+    { timeout: 5000 }
+  );
 });
