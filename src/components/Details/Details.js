@@ -9,6 +9,7 @@ const Details = ({ images, date, title, type, design, manufacturer }) => {
   }
   return (
     <>
+      <button onClick={handleBackHome}>Go back to home</button>
       <h1>{title}</h1>
       <p>{date}</p>
       <p>{type}</p>
@@ -19,7 +20,6 @@ const Details = ({ images, date, title, type, design, manufacturer }) => {
           <img className="img" key={i.href} src={i.href} />
         ))}
       </div>
-      <button onClick={handleBackHome}>Go back to home</button>
     </>
   );
 };
